@@ -36,6 +36,9 @@
                                 <rect key="frame" x="298" y="665" width="96" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="spinButton"/>
+                                <connections>
+                                    <action selector="spinAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="fgP-VD-en2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1a-Ev-nQv">
                                 <rect key="frame" x="49" y="105" width="30" height="30"/>
@@ -89,6 +92,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="betMaxButton"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="single_mot" translatesAutoresizingMaskIntoConstraints="NO" id="XYf-cG-Zwt">
+                                <rect key="frame" x="342" y="201" width="59" height="242"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
@@ -97,6 +104,7 @@
                         <outlet property="Picker" destination="leM-UE-qfG" id="clG-29-3qp"/>
                         <outlet property="betmax" destination="2TW-FG-WHC" id="Gp7-b0-H0u"/>
                         <outlet property="betone" destination="aHC-xf-oSd" id="edE-4C-cRL"/>
+                        <outlet property="spinhandle" destination="XYf-cG-Zwt" id="2oc-p7-aLw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -107,6 +115,7 @@
     <resources>
         <image name="bet1Button" width="60" height="60"/>
         <image name="betMaxButton" width="60" height="60"/>
+        <image name="single_mot" width="328" height="1631"/>
         <image name="spinButton" width="60" height="60"/>
     </resources>
 </document>
