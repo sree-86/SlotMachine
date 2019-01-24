@@ -12,7 +12,12 @@ import GameplayKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    let images = [#imageLiteral(resourceName: "BackButton"),#imageLiteral(resourceName: "crown"),#imageLiteral(resourceName: "bar"),#imageLiteral(resourceName: "seven"),#imageLiteral(resourceName: "cherry"),#imageLiteral(resourceName: "lemon")]
+    let images = [#imageLiteral(resourceName: "dimond"),#imageLiteral(resourceName: "crown"),#imageLiteral(resourceName: "bar"),#imageLiteral(resourceName: "seven"),#imageLiteral(resourceName: "cherry"),#imageLiteral(resourceName: "lemon")]
+    
+    
+    @IBOutlet weak var Picker: UIPickerView!
+    @IBOutlet weak var betmax: UIButton!
+    @IBOutlet weak var betone: UIButton!
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         <#code#>
