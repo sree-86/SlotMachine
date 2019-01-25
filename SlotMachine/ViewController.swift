@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     let images = [#imageLiteral(resourceName: "dimond"),#imageLiteral(resourceName: "crown"),#imageLiteral(resourceName: "bar"),#imageLiteral(resourceName: "seven"),#imageLiteral(resourceName: "cherry"),#imageLiteral(resourceName: "lemon")]
     
     
+    @IBOutlet weak var userlabel: UILabel!
     @IBOutlet weak var winning: UILabel!
     @IBOutlet weak var betamount: UILabel!
     @IBOutlet weak var credits: UILabel!
@@ -79,6 +80,46 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         spinAction()
     }
     
+    func checkWin(){
+        
+        var lastRow = -1
+        var counter = 0
+        
+        for i in 0..<Picker.numberOfComponents{
+            let row : Int = Picker.selectedRow(inComponent: i) % images.count // selected img idx
+            if lastRow == row{ // two equals indexes
+                counter += 1
+            } else {
+                lastRow = row
+                counter = 1
+            }
+        }
+        
+        if counter == 3{ // winning
+            Model.instance.play(sound: Constant.win_sound)
+            //animate(view: machineImageView, images: [#imageLiteral(resourceName: "machine"),#imageLiteral(resourceName: "machine_off")], duration: 1, repeatCount: 15)
+            //animate(view: cashImageView, images: [#imageLiteral(resourceName: "change"),#imageLiteral(resourceName: "extra_change")], duration: 1, repeatCount: 15)
+            betstepper.maximumValue = Double(currentCredits)
+            
+            userlabel.text = "YOU WON \(200 + bet * 2)"
+            Model.instance.updateScore(label: credits,credit: (currentCredits + 200) + (bet * 2))
+        } else { // losing
+            userlabel.text = "TRY AGAIN"
+            Model.instance.updateScore(label: credits,credit: (currentCredits - bet))
+        }
+        
+        // if cash is over
+        if currentCredits <= 0 {
+            gameOver()
+        }else{  // update bet stepper
+            if Int(betstepper.value) > currentCredits {
+                betstepper.maximumValue = Double(currentCredits)
+                bet = currentCredits
+                betstepper.value = Double(currentCredits)
+            }
+        }
+    }
+    
     
     func spinAction(){
         spinhandle.isUserInteractionEnabled = false // disable clicking
@@ -87,7 +128,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         //Model.instance.play(sound: Constant.spin_sound)
         roll()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            //self.checkWin()
+            self.checkWin()
             self.spinhandle.isUserInteractionEnabled = true
         }
         
