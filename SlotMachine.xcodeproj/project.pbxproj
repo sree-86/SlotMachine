@@ -19,6 +19,8 @@
 		308662DA21FA48A3005D6681 /* SlotMachineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308662D921FA48A3005D6681 /* SlotMachineUITests.swift */; };
 		308662E821FA6016005D6681 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308662E721FA6016005D6681 /* Utils.swift */; };
 		308662EA21FA9149005D6681 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308662E921FA9149005D6681 /* Model.swift */; };
+		308662ED21FAAD8A005D6681 /* spin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 308662EB21FAAD8A005D6681 /* spin.wav */; };
+		308662EE21FAAD8A005D6681 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 308662EC21FAAD8A005D6681 /* win.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		308662DB21FA48A3005D6681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		308662E721FA6016005D6681 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		308662E921FA9149005D6681 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		308662EB21FAAD8A005D6681 /* spin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = spin.wav; sourceTree = "<group>"; };
+		308662EC21FAAD8A005D6681 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				308662BD21FA48A1005D6681 /* Main.storyboard */,
 				308662C021FA48A2005D6681 /* Assets.xcassets */,
 				308662C221FA48A2005D6681 /* LaunchScreen.storyboard */,
+				308662EB21FAAD8A005D6681 /* spin.wav */,
+				308662EC21FAAD8A005D6681 /* win.wav */,
 				308662C521FA48A2005D6681 /* Info.plist */,
 				308662E721FA6016005D6681 /* Utils.swift */,
 				308662E921FA9149005D6681 /* Model.swift */,
@@ -244,6 +250,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				308662EE21FAAD8A005D6681 /* win.wav in Resources */,
+				308662ED21FAAD8A005D6681 /* spin.wav in Resources */,
 				308662BF21FA48A1005D6681 /* Main.storyboard in Resources */,
 				308662B621FA48A1005D6681 /* GameScene.sks in Resources */,
 				308662C121FA48A2005D6681 /* Assets.xcassets in Resources */,
