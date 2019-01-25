@@ -45,7 +45,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func spinAction(){
         spinhandle.isUserInteractionEnabled = false // disable clicking
-        // animation of bandit handle
+        // animation of bandit handle 
         animate(view: spinhandle, images: #imageLiteral(resourceName: "mot").spriteSheet(cols: 14, rows: 1), duration: 0.5, repeatCount: 1)
         //Model.instance.play(sound: Constant.spin_sound)
         roll()
