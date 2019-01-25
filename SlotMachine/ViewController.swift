@@ -25,7 +25,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var betone: UIButton!
     @IBOutlet weak var betstepper: UIStepper!
     
-    var bet : Int = 10{
+    var bet : Int = 1{
         didSet{//update ui
             betamount.text = "\(currentCredits)"
         }
@@ -51,7 +51,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func startGame(){
         if Model.instance.isFirstTime(){ // check if it's first time playing
-            Model.instance.updateScore(label: credits, credit: 100)
+            Model.instance.updateScore(label: credits, credit: 500)
         }else{ // get last saved score
             credits.text = "\(Model.instance.getScore())"
         } // set max bet
@@ -76,6 +76,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
    
+    @IBAction func maxact(_ sender: UIButton) {
+        bet = 1
+        betamount.text = "1"
+        
+    }
+    
+    @IBAction func realmaxact(_ sender: UIButton) {
+        betamount.text = "\(currentCredits)"
+        bet = currentCredits
+    }
+    
+    
     @IBAction func spinBarAct(_ sender: UITapGestureRecognizer) {
         spinAction()
     }
@@ -101,7 +113,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             //animate(view: cashImageView, images: [#imageLiteral(resourceName: "change"),#imageLiteral(resourceName: "extra_change")], duration: 1, repeatCount: 15)
             betstepper.maximumValue = Double(currentCredits)
             
-            userlabel.text = "YOU WON \(200 + bet * 2)"
+            userlabel.text = "YOU WON"
+            winning.text = winning.text! + "\(200 + bet * 2)"
             Model.instance.updateScore(label: credits,credit: (currentCredits + 200) + (bet * 2))
         } else { // losing
             userlabel.text = "TRY AGAIN"

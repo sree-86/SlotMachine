@@ -27,7 +27,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="bet1Button"/>
                                 <connections>
-                                    <action selector="oneaction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="yPS-d9-qWL"/>
+                                    <action selector="maxact:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Ro3-vZ-YDJ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeJ-oz-7KU">
@@ -61,7 +61,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="betMaxButton"/>
                                 <connections>
-                                    <action selector="maxaction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="xLw-gv-qcO"/>
+                                    <action selector="realmaxact:" destination="BV1-FR-VrT" eventType="touchUpInside" id="XWq-Mo-rvf"/>
                                 </connections>
                             </button>
                             <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="leM-UE-qfG">
@@ -97,8 +97,6 @@
                     <connections>
                         <outlet property="Picker" destination="leM-UE-qfG" id="clG-29-3qp"/>
                         <outlet property="betamount" destination="GX5-eO-MmF" id="fjx-vA-tn0"/>
-                        <outlet property="betmax" destination="2TW-FG-WHC" id="Gp7-b0-H0u"/>
-                        <outlet property="betone" destination="aHC-xf-oSd" id="edE-4C-cRL"/>
                         <outlet property="betstepper" destination="w29-OQ-E71" id="wgH-by-RVR"/>
                         <outlet property="credits" destination="uje-f4-4vy" id="gCX-Cf-AR6"/>
                         <outlet property="spinhandle" destination="XYf-cG-Zwt" id="2oc-p7-aLw"/>
