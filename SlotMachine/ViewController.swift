@@ -37,43 +37,59 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         return images[component].size.height + 1
     }
     
-    @IBAction func spinAction(_ sender: UIButton) {
+   
+    @IBAction func spinBarAct(_ sender: UITapGestureRecognizer) {
         spinAction()
     }
+    
     
     func spinAction(){
         spinhandle.isUserInteractionEnabled = false // disable clicking
         // animation of bandit handle
         animate(view: spinhandle, images: #imageLiteral(resourceName: "mot").spriteSheet(cols: 14, rows: 1), duration: 0.5, repeatCount: 1)
-        userIndicatorlabel.text = ""
-        Model.instance.play(sound: Constant.spin_sound)
+        //Model.instance.play(sound: Constant.spin_sound)
         roll()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.checkWin()
+            //self.checkWin()
             self.spinhandle.isUserInteractionEnabled = true
         }
         
     }
     
-    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+    func roll(){ // roll pickerview
+        var delay : TimeInterval = 0
+        // iterate over each component, set random img
+        for i in 0..<Picker.numberOfComponents{
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+                self.randomSelectRow(in: i)
+            })
+            delay += 0.30
+        }
+    }
+    
+    func randomSelectRow(in comp : Int){
+        let r = Int(arc4random_uniform(UInt32(8 * images.count))) + images.count
+        Picker.selectRow(r, inComponent: comp, animated: true)
+        
+    }
+    
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
-            case UISwipeGestureRecognizerDirection.down: self.spinAction()
+            case UISwipeGestureRecognizer.Direction.down: self.spinAction()
             default:break
             }
         }
     }
     
-    func animate(view : UIImageView, images : [UIImage] , duration : TimeInterval , repeatCount : Int){
-        view.animationImages = images
-        view.animationDuration = duration
-        view.animationRepeatCount = repeatCount
-        view.startAnimating()
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeDown.direction = UISwipeGestureRecognizer.Direction.down
+        self.view.addGestureRecognizer(swipeDown)
        
     }
 

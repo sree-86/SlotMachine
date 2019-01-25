@@ -17,6 +17,7 @@
 		308662C421FA48A2005D6681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 308662C221FA48A2005D6681 /* LaunchScreen.storyboard */; };
 		308662CF21FA48A3005D6681 /* SlotMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308662CE21FA48A3005D6681 /* SlotMachineTests.swift */; };
 		308662DA21FA48A3005D6681 /* SlotMachineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308662D921FA48A3005D6681 /* SlotMachineUITests.swift */; };
+		308662E821FA6016005D6681 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308662E721FA6016005D6681 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		308662D521FA48A3005D6681 /* SlotMachineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlotMachineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		308662D921FA48A3005D6681 /* SlotMachineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineUITests.swift; sourceTree = "<group>"; };
 		308662DB21FA48A3005D6681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		308662E721FA6016005D6681 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				308662C021FA48A2005D6681 /* Assets.xcassets */,
 				308662C221FA48A2005D6681 /* LaunchScreen.storyboard */,
 				308662C521FA48A2005D6681 /* Info.plist */,
+				308662E721FA6016005D6681 /* Utils.swift */,
 			);
 			path = SlotMachine;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				308662BA21FA48A1005D6681 /* GameScene.swift in Sources */,
 				308662BC21FA48A1005D6681 /* ViewController.swift in Sources */,
 				308662B421FA48A1005D6681 /* AppDelegate.swift in Sources */,
+				308662E821FA6016005D6681 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
