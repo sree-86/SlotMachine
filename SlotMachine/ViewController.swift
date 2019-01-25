@@ -76,7 +76,26 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         return images[component].size.height + 1
     }
     @IBAction func quitapp(_ sender: UIButton) {
-        exit(0)
+        quitAlert(title: "Do you want to quit ?", message: "")
+        // exit(0)
+    }
+    
+    func quitAlert(title:String, message: String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Yes", style:UIAlertAction.Style.default, handler: { action in
+            alert.dismiss(animated: true, completion: nil)
+            print("YES")
+            exit(0)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style:UIAlertAction.Style.default, handler: { action in
+            alert.dismiss(animated: true, completion: nil)
+            print("NO")
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     @IBAction func reset(_ sender: UIButton) {
