@@ -21,8 +21,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var credits: UILabel!
     @IBOutlet weak var spinhandle: UIImageView!
     @IBOutlet weak var Picker: UIPickerView!
-    @IBOutlet weak var betmax: UIButton!
-    @IBOutlet weak var betone: UIButton!
     @IBOutlet weak var betstepper: UIStepper!
     
     var bet : Int = 1{
