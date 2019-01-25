@@ -4,8 +4,9 @@
 //
 //  Created by Sreeram Ramakrishnan on 2019-01-24.
 //  Copyright © 2019 Centennial College. All rights reserved.
-//
-
+// STUDENT NAME : SREERAM RAMAKRISHNAN & SHERLYN LOBO
+// STUDENT ID : 301042442 & 301013071
+// PROGRAM : ADVANCED IOS DEVELOPMENT
 import UIKit
 
 struct Constant {

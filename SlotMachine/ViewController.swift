@@ -4,7 +4,9 @@
 //
 //  Created by Sreeram Ramakrishnan on 2019-01-24.
 //  Copyright © 2019 Centennial College. All rights reserved.
-//
+// STUDENT NAME : SREERAM RAMAKRISHNAN & SHERLYN LOBO
+// STUDENT ID : 301042442 & 301013071
+// PROGRAM : ADVANCED IOS DEVELOPMENT
 
 import UIKit
 import SpriteKit
@@ -107,8 +109,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         var counter = 0
         
         for i in 0..<Picker.numberOfComponents{
-            let row : Int = Picker.selectedRow(inComponent: i) % images.count // selected img idx
-            if lastRow == row{ // two equals indexes
+            let row : Int = Picker.selectedRow(inComponent: i) % images.count 
+            if lastRow == row{
                 counter += 1
             } else {
                 lastRow = row
@@ -118,8 +120,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         if counter == 3{ // winning
             Model.instance.play(sound: Constant.win_sound)
-            //animate(view: machineImageView, images: [#imageLiteral(resourceName: "machine"),#imageLiteral(resourceName: "machine_off")], duration: 1, repeatCount: 15)
-            //animate(view: cashImageView, images: [#imageLiteral(resourceName: "change"),#imageLiteral(resourceName: "extra_change")], duration: 1, repeatCount: 15)
+           
             betstepper.maximumValue = Double(currentCredits)
             
             userlabel.text = "YOU WON"
@@ -148,7 +149,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         spinhandle.isUserInteractionEnabled = false // disable clicking
         // animation of bandit handle 
         animate(view: spinhandle, images: #imageLiteral(resourceName: "mot").spriteSheet(cols: 14, rows: 1), duration: 0.5, repeatCount: 1)
-        //Model.instance.play(sound: Constant.spin_sound)
+        Model.instance.play(sound: Constant.spin_sound)
         roll()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.checkWin()
