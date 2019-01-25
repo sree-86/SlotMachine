@@ -22,12 +22,23 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var Picker: UIPickerView!
     @IBOutlet weak var betmax: UIButton!
     @IBOutlet weak var betone: UIButton!
+    @IBOutlet weak var betstepper: UIStepper!
     
     var bet : Int = 10{
         didSet{//update ui
             betamount.text = "\(currentCredits)"
         }
     }
+    
+    @IBAction func stepperaction(_ sender: UIStepper) {
+        betstepper.maximumValue = Double(currentCredits)
+        let amount = Int(sender.value)
+        if currentCredits >= amount{
+            bet = amount
+            betamount.text = "\(amount)"
+        }
+    }
+    
     
     // get current displayed cash, remove '$'
     var currentCredits : Int{
@@ -43,7 +54,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }else{ // get last saved score
             credits.text = "\(Model.instance.getScore())"
         } // set max bet
-        //betamount.maximumValue = Double(currentCredits)
+        betstepper.maximumValue = Double(currentCredits)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -108,7 +119,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }
     
-    
+    func gameOver(){ // when game is over, show alert
+        let alert = UIAlertController(title: "Game Over", message: "You have \(currentCredits) \nPlay Again?", preferredStyle: .alert)
+        alert.addAction( UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            self.startGame()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
