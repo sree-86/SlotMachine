@@ -23,6 +23,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var Picker: UIPickerView!
     @IBOutlet weak var betstepper: UIStepper!
     
+    var winval = 0
     var bet : Int = 1{
         didSet{//update ui
             betamount.text = "\(currentCredits)"
@@ -72,6 +73,16 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return images[component].size.height + 1
     }
+    @IBAction func quitapp(_ sender: UIButton) {
+        exit(0)
+    }
+    
+    @IBAction func reset(_ sender: UIButton) {
+        winning.text = "0"
+        bet = 1
+        betamount.text = "1"
+        credits.text = "500"
+    }
     
    
     @IBAction func maxact(_ sender: UIButton) {
@@ -112,7 +123,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             betstepper.maximumValue = Double(currentCredits)
             
             userlabel.text = "YOU WON"
-            winning.text = winning.text! + "\(200 + bet * 2)"
+            winval += 200 + bet * 2
+            winning.text = "\(winval)"
             Model.instance.updateScore(label: credits,credit: (currentCredits + 200) + (bet * 2))
         } else { // losing
             userlabel.text = "TRY AGAIN"
