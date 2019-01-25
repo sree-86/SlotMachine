@@ -9,7 +9,7 @@
 import UIKit
 
 struct Constant {
-    static let user_cash : String = "cash"
+    static let user_credit : String = "credit"
     static let win_sound : String = "win"
     static let spin_sound : String = "spin"
     static let is_save_exist : String = "save_exist"

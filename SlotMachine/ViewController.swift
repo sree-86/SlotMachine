@@ -15,10 +15,36 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     let images = [#imageLiteral(resourceName: "dimond"),#imageLiteral(resourceName: "crown"),#imageLiteral(resourceName: "bar"),#imageLiteral(resourceName: "seven"),#imageLiteral(resourceName: "cherry"),#imageLiteral(resourceName: "lemon")]
     
     
+    @IBOutlet weak var winning: UILabel!
+    @IBOutlet weak var betamount: UILabel!
+    @IBOutlet weak var credits: UILabel!
     @IBOutlet weak var spinhandle: UIImageView!
     @IBOutlet weak var Picker: UIPickerView!
     @IBOutlet weak var betmax: UIButton!
     @IBOutlet weak var betone: UIButton!
+    
+    var bet : Int = 10{
+        didSet{//update ui
+            betamount.text = "\(currentCredits)"
+        }
+    }
+    
+    // get current displayed cash, remove '$'
+    var currentCredits : Int{
+        guard let credit = credits.text, !(credits.text?.isEmpty)! else {
+            return 0
+        }
+        return Int(credit.replacingOccurrences(of: "$", with: ""))!
+    }
+    
+    func startGame(){
+        if Model.instance.isFirstTime(){ // check if it's first time playing
+            Model.instance.updateScore(label: credits, credit: 100)
+        }else{ // get last saved score
+            credits.text = "\(Model.instance.getScore())"
+        } // set max bet
+        //betamount.maximumValue = Double(currentCredits)
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3

@@ -75,9 +75,12 @@
                     </view>
                     <connections>
                         <outlet property="Picker" destination="leM-UE-qfG" id="clG-29-3qp"/>
+                        <outlet property="betamount" destination="GX5-eO-MmF" id="fjx-vA-tn0"/>
                         <outlet property="betmax" destination="2TW-FG-WHC" id="Gp7-b0-H0u"/>
                         <outlet property="betone" destination="aHC-xf-oSd" id="edE-4C-cRL"/>
+                        <outlet property="credits" destination="uje-f4-4vy" id="gCX-Cf-AR6"/>
                         <outlet property="spinhandle" destination="XYf-cG-Zwt" id="2oc-p7-aLw"/>
+                        <outlet property="winning" destination="EeJ-oz-7KU" id="GgN-n2-67Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
